@@ -28,30 +28,13 @@ inputNumberEl.addEventListener("input", (event) => {
   amount = event.currentTarget.value;
 });
 
-//  Переодически при генерации случайного цвета в HEX, генератор выдает вместо 6-ти символов 5!
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-}
-
-//  Альтернативный, рабочий, генератор случайного цвета.
-function colorGen() {
-  const r = Math.floor(Math.random() * 256);
-  const g = Math.floor(Math.random() * 256);
-  const b = Math.floor(Math.random() * 256);
-  return "rgb(" + r + "," + g + "," + b + ")";
 }
 
 function createBoxes() {
   for (let i = 1; i <= amount; i += 1) {
     boxesEl.insertAdjacentHTML('beforeend', `<div style="width: ${i * 10 + 20 + 'px'}; height: ${i * 10 + 20 + 'px'}; background-color: ${getRandomHexColor()};"></div>`);
-    
-// ============== Альтернативный вариант ========================
-    
-    // const markup = document.createElement("div");
-    // markup.style.width = (i * 10 + 20) + 'px';
-    // markup.style.height = (i * 10 + 20) + 'px';
-    // markup.style.backgroundColor = getRandomHexColor();
-    // boxesEl.append(markup);
   };
 };
 
