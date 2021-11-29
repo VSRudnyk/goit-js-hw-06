@@ -43,7 +43,7 @@ function colorGen() {
 
 function createBoxes() {
   for (let i = 1; i <= amount; i += 1) {
-    boxesEl.insertAdjacentHTML('beforeend', `<div style="width: ${i * 10 + 20 + 'px'}; height: ${i * 10 + 20 + 'px'}; background-color: ${colorGen()};"></div>`);
+    boxesEl.insertAdjacentHTML('beforeend', `<div style="width: ${i * 10 + 20 + 'px'}; height: ${i * 10 + 20 + 'px'}; background-color: ${getRandomHexColor()};"></div>`);
     
 // ============== Альтернативный вариант ========================
     
