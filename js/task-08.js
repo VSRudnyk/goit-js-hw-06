@@ -27,7 +27,11 @@ const handleSubmit = event => {
         elements: { email, password }
     } = event.currentTarget;
 
-    email.value === '' || password.value === '' ? alert('Пожалуйста, заполните все поля!') : console.log(`{ Email: ${email.value}, Password: ${password.value} }`);
+    if (email.value === '' || password.value === '') {
+        alert('Пожалуйста, заполните все поля!');
+    }
+    console.log(`{ Email: ${email.value}, Password: ${password.value} }`);
+    event.currentTarget.reset();
 };
 
 formEl.addEventListener('submit', handleSubmit);
